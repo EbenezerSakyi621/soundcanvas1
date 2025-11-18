@@ -1,0 +1,351 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    padding-top: 80px; /*space for fixed header*/
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+.header-logo a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333333;
+    transition: color 0.3s;
+}
+.header-logo a:hover{
+    color: #007bff;
+}
+.nav-manu{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+.nav-item a{
+    text-decoration: none;
+    color: #555555;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+.nav-item a::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease-out;
+}
+.nav-item a:hover{
+    color: #007bff;
+}
+.nav-item a:hover::after{
+    width: 100%;
+}
+.nav-item.highlight a{
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+.nav-item.highlight a:hover{
+    background-color: #1e7e34;
+    color: white;
+}
+.nav-item.highlight a::after{
+    display: none;
+}
+@media (max-width: 768px) {
+    .header{
+        padding: 0 20px;
+        height: 60px;
+    }
+    .nav-manu{
+        gap: 15px;
+    }
+    .nav-item a{
+        font-size: 0.9rem;
+    }
+}
+.logo-text img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+}
+/* 
+ ================================================
+ 1. BASE STYLES & TYPOGRAPHY
+ ================================================
+*/
+:root {
+    --primary-blue: #007bff;
+    --secondary-green: #28a745;
+    --text-dark: #333333;
+    --text-light: #6c757d;
+    --bg-light: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Reusable Button Style */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    text-align: center;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--secondary-green);
+    color: white;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #1e7e34;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    margin-left: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* 
+ ================================================
+ 2. HERO SECTION
+ ================================================
+*/
+.hero-section {
+    background-color: var(--bg-light);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.cta-group {
+    margin-top: 30px;
+}
+
+/* 
+ ================================================
+ 3. VALUE PROPOSITIONS (THE WHY)
+ ================================================
+*/
+.value-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.value-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.value-card {
+    padding: 30px;
+    border-radius: 12px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-top: 15px;
+}
+
+.value-card p {
+    color: var(--text-light);
+}
+
+/* Simple icon placeholder styling */
+.icon-placeholder {
+    font-size: 2.5rem;
+    color: var(--secondary-green);
+}
+
+/* 
+ ================================================
+4. HOW IT WORKS SECTION
+ ================================================
+*/
+.steps-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.steps-section h2 {
+    margin-bottom: 60px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+}
+
+/* Connecting line for visual flow */
+.steps-container::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background-color: #e0e0e0;
+    z-index: 1; /* Keep line below markers */
+}
+
+.step-card {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.step-marker {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: 5px solid white; /* Creates a clean break on the connecting line */
+}
+
+.step-card h3 {
+    font-size: 1.3rem;
+}
+
+/* 
+ ================================================
+ 5. MEDIA QUERIES (Responsiveness)
+ ================================================
+*/
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .steps-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .steps-container::before {
+        /* Change connecting line from horizontal to vertical */
+        top: 50px;
+        bottom: 50px;
+        left: 50%;
+        width: 4px;
+        height: auto;
+        transform: translateX(-50%);
+    }
+    
+    .step-card {
+        text-align: center;
+        padding: 10px 0; 
+    }
+    
+    .cta-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-secondary {
+        margin: 10px 0 0 0;
+    }
+}
+        

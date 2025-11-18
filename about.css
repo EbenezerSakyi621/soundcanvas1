@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    padding-top: 80px; /*space for fixed header*/
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+.header-logo a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333333;
+    transition: color 0.3s;
+}
+.header-logo a:hover{
+    color: #007bff;
+}
+.nav-manu{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+.nav-item a{
+    text-decoration: none;
+    color: #555555;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+.nav-item a::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease-out;
+}
+.nav-item a:hover{
+    color: #007bff;
+}
+.nav-item a:hover::after{
+    width: 100%;
+}
+.nav-item.highlight a{
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+.nav-item.highlight a:hover{
+    background-color: #1e7e34;
+    color: white;
+}
+.nav-item.highlight a::after{
+    display: none;
+}
+.logo-text img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+}
+@media (max-width: 768px) {
+    .header{
+        padding: 0 20px;
+        height: 60px;
+    }
+    .nav-manu{
+        gap: 15px;
+    }
+    .nav-item a{
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 48px) {
+    .header{
+        padding: 0 20px;
+        height: 60px;
+    }
+    .nav-manu{
+        gap: 9px;
+    }
+    .nav-item a{
+        font-size: 0.4rem;
+    }
+}
+
+*/
+:root{
+    --primary-blue: #007bff;
+    --secondary-blue: #28a745;
+    --text-dark: #333333;
+    --text-light: #6c757d;
+    --bg-light: #f8f9fa;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333333;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1, h2{
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-align: center;
+}
+h1{
+    font-size: 2.8rem;
+    padding-top: 60px;
+    color: #007bff;
+}
+h2{
+    font-style: 2rem;
+    color: #333333;
+    border-bottom: 4px solid #28a745;
+    display: inline-block;
+    margin: 0 auto 40px;
+    padding-bottom: 5px;
+}
+p{
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #6c757d;
+}
+section{
+    padding: 60px 0;
+}
+.mission-section{
+    background-color: #f8f9fa;
+}
+.story-content{
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+.story-text{
+    flex: 2;
+    text-align: left;
+}
+.story-graphic{
+    flex: 1;
+    background-color: #ebf0ff;
+    border-left: 4px solid #007bff;
+    padding: 20px;
+    border-radius: 8px;
+    font-style: italic;
+    color: #007bff;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.values-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.value-card{
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-top: 4px solid #007bff;
+    transition: 0.3s;
+}
+.value-card:hover{
+    transform: translateY(-3px);
+}
+.value-card h3{
+    font-style: 1rem;
+    color: #28a745;
+    margin-top: 10px;
+}
+.icon-large{
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+.cta-footer{
+    background-color: #007bff;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+.cta-footer h2{
+    color: white;
+    border-bottom-color: white;
+}
+.btn-ready{
+    background-color: #28a745;
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.btn-ready:hover{
+    background-color: #1e7e34;
+}
+
+@media (max-width: 768px) {
+    h1{
+        font-style: 2rem;
+    }
+    .story-content{
+        flex-direction: column;
+    }
+    .story-graphic{
+        order: -1;
+        min-height: 100px;
+    }
+}

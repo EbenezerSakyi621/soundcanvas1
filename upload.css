@@ -1,0 +1,329 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    padding-top: 80px; /*space for fixed header*/
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+.header-logo a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333333;
+    transition: color 0.3s;
+}
+.header-logo a:hover{
+    color: #007bff;
+}
+.nav-manu{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+.nav-item a{
+    text-decoration: none;
+    color: #555555;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+.nav-item a::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease-out;
+}
+.nav-item a:hover{
+    color: #007bff;
+}
+.nav-item a:hover::after{
+    width: 100%;
+}
+.nav-item.highlight a{
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+.nav-item.highlight a:hover{
+    background-color: #1e7e34;
+    color: white;
+}
+.nav-item.highlight a::after{
+    display: none;
+}
+.logo-text img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+}
+@media (max-width: 768px) {
+    .header{
+        padding: 0 20px;
+        height: 60px;
+    }
+    .nav-manu{
+        gap: 15px;
+    }
+    .nav-item a{
+        font-size: 0.9rem;
+    }
+}
+h1 #bllock{
+    color: black;
+    display: flex;
+}    
+/* 
+         ================================================
+         1. VARIABLES & BASE STYLES
+         ================================================
+        */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-green: #28a745;
+            --text-dark: #333333;
+            --text-light: #6c757d;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .form-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .form-description {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* 
+         ================================================
+         2. FORM GRID LAYOUT (Responsiveness Core)
+         ================================================
+        */
+        .submission-form {
+            display: grid;
+            /* Defines 3 columns: two are for general text, the third is reserved for file uploads */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .form-group {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: box-shadow 0.3s;
+        }
+        
+        .form-group:hover {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        
+        /* Input Styling (Text, Date, Select) */
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        /* Explicit Flag Styling */
+        .explicit-flag {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        .explicit-flag input {
+            width: auto;
+            transform: scale(1.5);
+        }
+        .explicit-flag label {
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        /* 
+         ================================================
+         3. FILE INPUT STYLING (Custom Buttons & Previews)
+         ================================================
+        */
+        input[type="file"] {
+            display: none; 
+        }
+        
+        .file-upload-label {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .file-upload-label:hover {
+            background-color: #0056b3;
+        }
+
+        .preview-area {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+border: 1px dashed #ccc;
+            border-radius: 5px;
+            min-height: 50px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            word-break: break-all;
+        }
+
+        #image-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+
+        /* 
+         ================================================
+         4. SUBMISSION BUTTON & NOTE
+         ================================================
+        */
+        .submit-area {
+             /* Spans all 3 columns for a full-width button */
+            grid-column: 1 / span 3; 
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button[type="submit"] {
+            padding: 15px 40px;
+            background-color: var(--secondary-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            min-width: 250px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1e7e34;
+        }
+        
+        .critical-note {
+            grid-column: 1 / span 3;
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 5px;
+            color: #856404;
+            font-size: 0.9rem;
+        }
+
+        /* 
+         ================================================
+         5. MEDIA QUERIES (Responsiveness)
+         ================================================
+        */
+        @media (max-width: 1024px) {
+            /* If the screen is between 769px and 1024px, switch to 2 columns */
+            .submission-form {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-group:nth-child(9) { /* Push the 9th element (ISRC) to the second column */
+                grid-column: 2;
+            }
+            .form-group:nth-child(10) { /* Push the 10th element (Explicit) to the second column */
+                grid-column: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* On smaller screens, stack everything into 1 column */
+            .submission-form {
+                grid-template-columns: 1fr;
+            }
+            .form-group,
+            .explicit-flag, 
+            .submit-area,
+            .critical-note {
+                grid-column: 1 / 1; /* Ensure all elements are full width */
+            }
+            .form-group {
+                padding: 10px 5px;
+            }
+        }
